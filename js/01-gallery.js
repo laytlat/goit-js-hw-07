@@ -24,6 +24,9 @@ galleryEl.addEventListener('click', onClickOpenModal);
 
 function onClickOpenModal(evt) {
   evt.preventDefault();
+  if (evt.target === galleryEl) {
+    return;
+  }
   const instance = basicLightbox.create(`
       <img src="${evt.target.dataset.source}" width="100%" height="100%">
   `);
